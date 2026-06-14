@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #101513;
+  --muted: #66706b;
+  --paper: #f3f1e9;
+  --card: #fffef9;
+  --line: #dcded7;
+  --green: #164a38;
+  --lime: #d8ff52;
+  --orange: #ff6b35;
+}
+
+@theme inline {
+  --font-sans: var(--font-archivo);
+  --font-display: var(--font-space-grotesk);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 78% -10%, rgba(216, 255, 82, 0.2), transparent 30rem),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--font-archivo), Arial, sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.display {
+  font-family: var(--font-space-grotesk), Arial, sans-serif;
+}
+
+.score-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(255, 107, 53, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+  }
+}
+
+.live-dot {
+  animation: pulse-ring 1.8s infinite;
+}
